@@ -1,4 +1,4 @@
-{% extends '@Sales/Layout/layout.twig' %}
+{% extends '@Gui/layout/layout.twig' %}
 
 {% block section_title %}
     {{ 'Dashboard' | trans }}
@@ -10,7 +10,7 @@
         {% if countPlugin%2 == 0 %}
             <div class="row page-heading">
         {% endif %}
-        <div class="col-lg-6">
+        <div class="col-lg-6 mb-4">
             {{ pluginContent | raw }}
         </div>
         {% if countPlugin%2 == 1 %}

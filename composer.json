@@ -5,6 +5,7 @@
     "license": "proprietary",
     "require": {
         "php": ">=8.3",
+        "spryker/gui": "^3.0.0 || ^4.0.0",
         "spryker/kernel": "^3.30.0"
     },
     "require-dev": {
@@ -12,7 +13,6 @@
         "spryker/code-sniffer": "*",
         "spryker/container": "*",
         "spryker/event-dispatcher": "*",
-        "spryker/gui": "*",
         "spryker/propel": "*",
         "spryker/router": "*",
         "spryker/store": "*",

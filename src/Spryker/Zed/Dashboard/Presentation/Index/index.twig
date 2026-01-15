@@ -5,17 +5,14 @@
 {% endblock %}
 
 {% block content %}
+
+{% include '@Dashboard/_partials/quick-actions.twig' only %}
+
+<div class="row">
     {% for pluginContent in pluginContents %}
-        {% set countPlugin = ( countPlugin | default(-1) ) + 1 %}
-        {% if countPlugin%2 == 0 %}
-            <div class="row page-heading">
-        {% endif %}
         <div class="col-lg-6 mb-4">
             {{ pluginContent | raw }}
         </div>
-        {% if countPlugin%2 == 1 %}
-            </div>
-        {% endif %}
     {% endfor %}
-
+</div>
 {% endblock %}

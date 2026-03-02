@@ -14,9 +14,6 @@ use Spryker\Zed\Kernel\Communication\Controller\AbstractController;
  */
 class IndexController extends AbstractController
 {
-    /**
-     * @return array
-     */
     public function indexAction(): array
     {
         $plugins = $this->getFactory()->getDateFormatterService();

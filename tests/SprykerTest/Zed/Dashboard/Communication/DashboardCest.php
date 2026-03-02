@@ -22,22 +22,12 @@ use SprykerTest\Zed\Dashboard\PageObject\DashboardPage;
  */
 class DashboardCest
 {
-    /**
-     * @param \SprykerTest\Zed\Dashboard\DashboardCommunicationTester $i
-     *
-     * @return void
-     */
     public function isVisibleBreadcrumb(DashboardCommunicationTester $i): void
     {
         $i->amOnPage(DashboardPage::URL);
         $i->seeBreadcrumbNavigation('Dashboard');
     }
 
-    /**
-     * @param \SprykerTest\Zed\Dashboard\DashboardCommunicationTester $i
-     *
-     * @return void
-     */
     public function isVisibleTitle(DashboardCommunicationTester $i): void
     {
         $i->amOnPage(DashboardPage::URL);

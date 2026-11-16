@@ -1,4 +1,4 @@
-"Count orders","Count orders"
+"Count orders","Orders over time"
 Dashboard,Dashboard
 "Status orders","Orders by status"
 "View orders","View orders"
@@ -6,3 +6,7 @@ Dashboard,Dashboard
 "Go to catalog","Go to catalog"
 "Check Returns","Check Returns"
 "Quick actions","Quick actions"
+"Track and manage orders","Track and manage orders"
+"Create a new product","Create a new product"
+"Browse all products","Browse all products"
+"Review return requests","Review return requests"

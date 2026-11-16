@@ -1,18 +1,38 @@
 {% extends '@Gui/layout/layout.twig' %}
 
+{% block head_css %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ assetsPath('css/spryker-zed-dashboard-main.css') }}">
+{% endblock %}
+
 {% block section_title %}
     {{ 'Dashboard' | trans }}
 {% endblock %}
 
 {% block content %}
+    <div class="dashboard">
+        {% block quickActions %}
+            {% include '@Dashboard/_partials/quick-actions.twig' only %}
+        {% endblock %}
 
-{% include '@Dashboard/_partials/quick-actions.twig' only %}
+        {% block dashboardGrid %}
+            {% set leadingColumnClasses = ['col-xl-8', 'col-xl-4'] %}
 
-<div class="row">
-    {% for pluginContent in pluginContents %}
-        <div class="col-lg-6 mb-4">
-            {{ pluginContent | raw }}
-        </div>
-    {% endfor %}
-</div>
+            <div class="row dashboard__grid">
+                {% block dashboardRow %}
+                    {% for pluginContent in pluginContents %}
+                        {% block dashboardCard %}
+                            <div class="col-lg-6 {{ leadingColumnClasses[loop.index0] | default('') }}">
+                                <div class="card h-100 mb-0 dashboard__card">
+                                    <div class="card-body d-flex flex-column">
+                                        {{ pluginContent | raw }}
+                                    </div>
+                                </div>
+                            </div>
+                        {% endblock %}
+                    {% endfor %}
+                {% endblock %}
+            </div>
+        {% endblock %}
+    </div>
 {% endblock %}

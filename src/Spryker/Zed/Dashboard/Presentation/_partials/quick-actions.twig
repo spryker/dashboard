@@ -1,49 +1,60 @@
 {% block quickActions %}
     {% block quickActionsTitle %}
-        <h3>{{ 'Quick actions' | trans }}</h3>
+        <h3 class="fs-6 fw-semibold mb-3">{{ 'Quick actions' | trans }}</h3>
     {% endblock %}
 
     {% set quickActionCards = [
         {
             icon: 'local_mall',
             title: 'View orders',
+            description: 'Track and manage orders',
             url: url('sales'),
             qa: 'quick-actions-view-orders',
         },
         {
-            icon: 'package_2',
+            icon: 'add_box',
             title: 'Add products',
+            description: 'Create a new product',
             url: url('product-management/add'),
             qa: 'quick-actions-add-products',
         },
         {
-            icon: 'package_2',
+            icon: 'menu_book',
             title: 'Go to catalog',
+            description: 'Browse all products',
             url: url('product-management'),
             qa: 'quick-actions-go-to-catalog',
         },
         {
-            icon: 'assignment_return',
+            icon: 'replay',
             title: 'Check Returns',
+            description: 'Review return requests',
             url: url('merchant-sales-return-merchant-user-gui'),
             qa: 'quick-actions-check-returns',
         },
     ]%}
-    {% set quickActionCardClassName = 'col-sm-6 col-lg-3 mb-4' %}
+    {% set quickActionCardClassName = 'col-sm-6 col-lg-3' %}
 
     {% block quickActionsContent %}
-        <div class="row">
+        <div class="row mb-3 dashboard__grid">
             {% for quickActionCard in quickActionCards %}
                 <div class="{{ quickActionCardClassName }}">
-                    <a href="{{ quickActionCard.url }}" class="card" data-qa="{{ quickActionCard.qa }}">
-                        <div class="p-4">
-                            <i class="material-symbols-outlined quick-action-icon fs-2 mb-2 d-block">{{ quickActionCard.icon }}</i>
-                            <h3>{{ quickActionCard.title | trans }}</h3>
-                        </div>
+                    <a href="{{ quickActionCard.url }}" class="card h-100 mb-0 flex-row align-items-center gap-3 text-reset text-decoration-none dashboard__quick-action" data-qa="{{ quickActionCard.qa }}">
+                        <span class="avatar-md flex-shrink-0">
+                            <span class="avatar-title rounded-2 bg-primary-subtle text-primary">
+                                <i class="material-symbols-outlined fs-5" aria-hidden="true">{{ quickActionCard.icon }}</i>
+                            </span>
+                        </span>
+                        <span class="flex-grow-1 text-truncate">
+                            <span class="d-block fw-semibold text-truncate">{{ quickActionCard.title | trans }}</span>
+                            {% if quickActionCard.description is defined %}
+                                <span class="d-block small text-body-secondary text-truncate">{{ quickActionCard.description | trans }}</span>
+                            {% endif %}
+                        </span>
+                        <i class="material-symbols-outlined fs-5 text-body-secondary" aria-hidden="true">chevron_right</i>
                     </a>
                 </div>
             {% endfor %}
         </div>
     {% endblock %}
 {% endblock %}
-

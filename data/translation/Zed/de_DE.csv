@@ -1,4 +1,4 @@
-"Count orders","Anzahl der Bestellungen"
+"Count orders","Bestellungen im Zeitverlauf"
 Dashboard,Dashboard
 "Status orders","Bestellungen nach Status"
 "View orders","Bestellungen anzeigen"
@@ -6,3 +6,7 @@ Dashboard,Dashboard
 "Go to catalog","Zum Katalog gehen"
 "Check Returns","Rücksendungen prüfen"
 "Quick actions",Schnellaktionen
+"Track and manage orders","Bestellungen verfolgen und verwalten"
+"Create a new product","Neues Produkt anlegen"
+"Browse all products","Alle Produkte durchsuchen"
+"Review return requests","Rücksendeanfragen prüfen"

@@ -1,0 +1,24 @@
+/**
+ * Copyright (c) 2016-present Spryker Systems GmbH. All rights reserved.
+ * Use of this software requires acceptance of the Evaluation License Agreement. See LICENSE file.
+ */
+
+.dashboard {
+    --ins-theme-card-border-color: color-mix(in sRGB, var(--ins-body-color) 30%, transparent);
+}
+
+.dashboard__grid {
+    --ins-gutter-x: 1rem;
+    --ins-gutter-y: 1.25rem;
+}
+
+.dashboard__card {
+    --ins-card-border-radius: 0.75rem;
+    --ins-card-spacer-x: 1.5rem;
+    --ins-card-spacer-y: 1.5rem;
+}
+
+.dashboard__quick-action {
+    --ins-card-border-radius: 0.75rem;
+    padding: 1rem;
+}

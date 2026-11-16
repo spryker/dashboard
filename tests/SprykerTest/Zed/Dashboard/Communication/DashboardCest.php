@@ -33,4 +33,14 @@ class DashboardCest
         $i->amOnPage(DashboardPage::URL);
         $i->canSee(DashboardPage::TITLE, 'h2');
     }
+
+    public function isVisibleQuickActions(DashboardCommunicationTester $i): void
+    {
+        $i->amOnPage(DashboardPage::URL);
+        $i->canSee('Quick actions', 'h3');
+        $i->seeElement(DashboardPage::SELECTOR_QUICK_ACTION_VIEW_ORDERS);
+        $i->seeElement(DashboardPage::SELECTOR_QUICK_ACTION_ADD_PRODUCTS);
+        $i->seeElement(DashboardPage::SELECTOR_QUICK_ACTION_GO_TO_CATALOG);
+        $i->seeElement(DashboardPage::SELECTOR_QUICK_ACTION_CHECK_RETURNS);
+    }
 }
